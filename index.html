@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description"
+          content=".">
+    <meta name="keywords"
+          content="GeometryCrafter, video geometry estimation, video depth estimation, monocular geometry estimation, open-world video">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GeometryCrafter</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="./static/css/twentytwenty.css">
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="icon" href="img/icon.png">
+
+
+    <script src="./static/js/jquery-3.2.1.min.js"></script>
+    <script src="./static/js/jquery.event.move.js"></script>
+    <script src="./static/js/jquery.twentytwenty.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/fontawesome.all.min.js"></script>
+</head>
+
+
+
+
+<body>
+
+
+<section class="hero teaser ">
+    <div class="hero-body">
+        <div class="container is-max-desktop has-text-centered">
+            <div class="columns is-centered">
+                <div class="column has-text-centered ">
+                    <img src="img/logo.png" style="height:150px; margin-bottom: -10px;"></img>
+                    <h1 class="title is-1 publication-title has-text-centered">
+                        GeometryCrafter: Consistent Geometry Estimation for Open-world Videos with Diffusion Priors
+                    </h1>
+                    <h2 class='title publication-title is-4 has-text-grey'>
+                        <a href='https://scholar.google.com/citations?user=zHp0rMIAAAAJ'>Tian-Xing Xu</a>,
+                        <a href='https://scholar.google.com/citations?user=qgdesEcAAAAJ'>Xiangjun Gao</a>,
+                        <a href='https://wbhu.github.io'>Wenbo Hu</a>,
+                        <a href='https://xiaoyu258.github.io/'>Xiaoyu Li</a>,
+                        <a href='https://scholar.google.com/citations?user=AWtV-EQAAAAJ'>Song-Hai Zhang</a>,
+                        <a href='https://scholar.google.com/citations?user=4oXBp9UAAAAJ'>Ying Shan</a>
+                    </h2>
+                    <span style='font-size:18px'>
+                        <a style='font-size:18px' href='https://github.com/'>[Github Repo]</a>
+                        <a style='font-size:18px' href='https://arxiv.org'> [ArXiv] </a>
+                        <a style='font-size:18px' href=''> [Project Page] </a> 
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="hero teaser is-light is-small">
+    <div class="hero-body">
+        <div class="container" style="text-align: left; ">
+            <div id="editting-carousel-horizontal" class="carousel results-carousel">
+
+                <!--DAVIS-->
+                <div class="twoitem">
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/showcase/parkour.mp4" type="video/mp4">
+                    </video>
+                    
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/showcase/parkour_output.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="twoitem">
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/showcase/motocross-bumps.mp4" type="video/mp4">
+                    </video>
+                    
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/showcase/motocross-bumps_output.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="twoitem">
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/showcase/drift-turn.mp4" type="video/mp4">
+                    </video>
+                    
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/showcase/drift-turn_output.mp4" type="video/mp4">
+                    </video>
+                </div>
+                
+                <!--Real world-->
+                <div class="twoitem">
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/showcase/sample_3.mp4" type="video/mp4">
+                    </video>
+                    
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/showcase/sample_3_output.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="twoitem">
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/showcase/sample_5.mp4" type="video/mp4">
+                    </video>
+                    
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/showcase/sample_5_output.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="twoitem">
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/showcase/sample_6.mp4" type="video/mp4">
+                    </video>
+                    
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/showcase/sample_6_output.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                
+                <!--animation-->
+                <div class="twoitem">
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/showcase/sample_10.mp4" type="video/mp4">
+                    </video>
+                    
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/showcase/sample_10_output.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="twoitem">
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/showcase/sample_11.mp4" type="video/mp4">
+                    </video>
+                    
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/showcase/sample_11_output.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="twoitem">
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/showcase/sample_12.mp4" type="video/mp4">
+                    </video>
+                    
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/showcase/sample_12_output.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <!--sora generated-->
+                <div class="twoitem">
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/showcase/sample_22.mp4" type="video/mp4">
+                    </video>
+                    
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/showcase/sample_22_output.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="twoitem">
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/showcase/sample_23.mp4" type="video/mp4">
+                    </video>
+                    
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/showcase/sample_23_output.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="twoitem">
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/showcase/sample_24.mp4" type="video/mp4">
+                    </video>
+                    
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/showcase/sample_24_output.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <!--game-->
+                <div class="twoitem">
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/showcase/sample_15.mp4" type="video/mp4">
+                    </video>
+                    
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/showcase/sample_15_output.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+            </div>
+
+            <div class="content has-text-justified" style="margin-top: 15px;">
+                We propose <b>GeometryCrafter</b>, a novel approach that estimates high-fidelity 
+                and temporally coherent point maps from open-world videos, 
+                ranging from indoor to outdoor environments, static to dynamic camera motions, 
+                and realistic to cartoon animations.
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<script>
+    $(window).on('load', function () {
+        bulmaCarousel.attach('#results-carousel-horizontal', {
+            slidesToScroll: 1,
+            slidesToShow: 1,
+            loop: true,
+            autoplay: false,
+        });
+
+        bulmaCarousel.attach('#results-carousel-vertical', {
+            slidesToScroll: 1,
+            slidesToShow: 1,
+            loop: true,
+            autoplay: false,
+        });
+
+    });
+</script>
+
+
+<section class="hero teaser is-light is-small">
+    <div class="hero-body">
+        <div class="container" style="text-align: center; ">
+            <h2 class="title is-3">Comparison with Monocular Geometry Estimation methods on labeled datasets</h2>
+            <div id="cmp-gt-carousel-horizontal" class="carousel results-carousel">
+
+                <video muted autoplay="autoplay" loop="loop" width="80%" preload controls>
+                    <source src="./video/compare_with_mge/sintel.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="80%" preload controls>
+                    <source src="./video/compare_with_mge/kitti.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="70%" preload controls>
+                    <source src="./video/compare_with_mge/gmu.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="70%" preload controls>
+                    <source src="./video/compare_with_mge/monkaa.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="60%" preload controls>
+                    <source src="./video/compare_with_mge/scannet.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="hero teaser is-light is-small">
+    <div class="hero-body">
+
+        <div class="container" style="text-align: center; ">
+            <h2 class="title is-3">
+                Comparison with MoGe in 3D point clouds.
+            </h2>
+            <div id="editting-carousel-horizontal" class="carousel results-carousel">
+
+
+                <div class="twoitem">
+
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                            <source src="video/comparison/moge_sample_12_output.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-label">MoGe</div>
+                    </div>
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                            <source src="video/showcase/sample_12_output.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-label">GeometryCrafter</div>
+                    </div>
+                </div>
+
+                <div class="twoitem">
+
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                            <source src="video/comparison/moge_sample_22_output.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-label">MoGe</div>
+                    </div>
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                            <source src="video/showcase/sample_22_output.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-label">GeometryCrafter</div>
+                    </div>
+                </div>
+                <div class="twoitem">
+
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                            <source src="video/comparison/moge_sample_23_output.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-label">MoGe</div>
+                    </div>
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                            <source src="video/showcase/sample_23_output.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-label">GeometryCrafter</div>
+                    </div>
+                </div>
+                <div class="twoitem">
+
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                            <source src="video/comparison/moge_sample_24_output.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-label">MoGe</div>
+                    </div>
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                            <source src="video/showcase/sample_24_output.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-label">GeometryCrafter</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="hero teaser is-light is-small">
+    <div class="hero-body">
+        <div class="container" style="text-align: center; ">
+            <h2 class="title is-3">Comparison with Monocular Depth Estimation methods on labeled datasets</h2>
+            <div id="cmp-gt-carousel-horizontal" class="carousel results-carousel">
+
+                <video muted autoplay="autoplay" loop="loop" width="80%" preload controls>
+                    <source src="./video/compare_with_mde/sintel.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="80%" preload controls>
+                    <source src="./video/compare_with_mde/kitti.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="70%" preload controls>
+                    <source src="./video/compare_with_mde/gmu.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="80%" preload controls>
+                    <source src="./video/compare_with_mde/sintel2.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="60%" preload controls>
+                    <source src="./video/compare_with_mde/scannet.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    $(window).on('load', function () {
+        bulmaCarousel.attach('#cmp-gt-carousel-horizontal', {
+            slidesToScroll: 1,
+            slidesToShow: 1,
+            loop: true,
+            autoplay: false,
+        });
+
+    });
+</script>
+
+<section class="hero teaser is-light is-small">
+    <div class="hero-body">
+
+        <div class="container" style="text-align: center; ">
+            <h2 class="title is-3">Camera pose estimation (static scene)</h2>
+            <div id="editting-carousel-horizontal" class="carousel results-carousel">
+
+
+                <div class="twoitem">
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/static/video7.mp4" type="video/mp4">
+                    </video>
+                    
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/static/output7.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="twoitem">
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/static/video8.mp4" type="video/mp4">
+                    </video>
+                    
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/static/output8.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="twoitem">
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/static/video9.mp4" type="video/mp4">
+                    </video>
+                    
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/static/output9.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="twoitem">
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/static/video10.mp4" type="video/mp4">
+                    </video>
+                    
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/static/output10.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="twoitem">
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/static/video11.mp4" type="video/mp4">
+                    </video>
+                    
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/static/output11.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script>
+    $(window).on('load', function () {
+        bulmaCarousel.attach('#editting-carousel-horizontal', {
+            slidesToScroll: 2,
+            slidesToShow: 2,
+            loop: true,
+            autoplay: false,
+        });
+    });
+</script>
+
+
+<section class="hero teaser is-light is-small">
+    <div class="hero-body">
+
+        <div class="container" style="text-align: center; ">
+            <h2 class="title is-3">
+                Camera pose estimation (dynamic scene)
+            </h2>
+            <div id="editting-carousel-horizontal" class="carousel results-carousel">
+
+
+                <div class="twoitem">
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/dynamic/video1.mp4" type="video/mp4">
+                    </video>
+                    
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/dynamic/output1.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="twoitem">
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/dynamic/video2.mp4" type="video/mp4">
+                    </video>
+                    
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/dynamic/output2.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="twoitem">
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/dynamic/video3.mp4" type="video/mp4">
+                    </video>
+                    
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/dynamic/output3.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="twoitem">
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/dynamic/video4.mp4" type="video/mp4">
+                    </video>
+                    
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/dynamic/output4.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="twoitem">
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/dynamic/video5.mp4" type="video/mp4">
+                    </video>
+                    
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/dynamic/output5.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script>
+    $(window).on('load', function () {
+        bulmaCarousel.attach('#editting-carousel-horizontal', {
+            slidesToScroll: 2,
+            slidesToShow: 2,
+            loop: true,
+            autoplay: false,
+        });
+    });
+</script>
+
+<section class="hero teaser is-light is-small">
+    <div class="hero-body">
+
+        <div class="container" style="text-align: center; ">
+            <h2 class="title is-3">4D reconstruction</h2>
+            <div id="editting-carousel-horizontal" class="carousel results-carousel">
+                    
+                <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                    <source src="video/decouple/output1.mp4" type="video/mp4">
+                    </video>
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/decouple/output2.mp4" type="video/mp4">
+                    </video>
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/decouple/output3.mp4" type="video/mp4">
+                    </video>
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/decouple/output4.mp4" type="video/mp4">
+                    </video>
+                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/decouple/output5.mp4" type="video/mp4">
+                    </video>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    $(window).on('load', function () {
+        bulmaCarousel.attach('#editting-carousel-horizontal', {
+            slidesToScroll: 2,
+            slidesToShow: 2,
+            loop: true,
+            autoplay: false,
+        });
+    });
+</script>
+
+<section class="hero teaser is-light is-small">
+    <div class="hero-body">
+        <div class="container" style="text-align: center; ">
+            <h2 class="title is-3">Ablation study of latent distribution aligment (L.A.)</h2>
+            <div id="cmp-gt-carousel-horizontal" class="carousel results-carousel">
+
+                <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                    <source src="video/ablation_studies/drone.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                    <source src="video/ablation_studies/motocross-jump.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                    <source src="video/ablation_studies/lab-coat.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                    <source src="video/ablation_studies/scooter-board.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    $(window).on('load', function () {
+        bulmaCarousel.attach('#cmp-gt-carousel-horizontal', {
+            slidesToScroll: 1,
+            slidesToShow: 1,
+            loop: true,
+            autoplay: false,
+        });
+
+    });
+</script>
+
+
+<footer class="footer">
+    <div class="hero-body">
+        <div class="columns is-two-fifths is-centered">
+            <div class="column is-8">
+                <div class="content">
+                    <p>
+                        Website template credit to <a
+                            href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, and is licensed under a <a
+                            rel="license"
+                            href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                        Commons Attribution-ShareAlike 4.0 International License</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+.video-with-label {
+  position: relative;
+  display: inline-block;
+}
+
+.video-label {
+  position: absolute;
+  top: 20px;
+  left:10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 4px 8px;
+  font-size: 16px;
+  border-radius: 4px;
+  pointer-events: none;
+}
+</style>
+
+</body>
+</html>
