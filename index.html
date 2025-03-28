@@ -47,19 +47,69 @@
                     <h1 class="title is-1 publication-title has-text-centered">
                         GeometryCrafter: Consistent Geometry Estimation for Open-world Videos with Diffusion Priors
                     </h1>
-                    <h2 class='title publication-title is-4 has-text-grey'>
-                        <a href='https://scholar.google.com/citations?user=zHp0rMIAAAAJ'>Tian-Xing Xu</a>,
-                        <a href='https://scholar.google.com/citations?user=qgdesEcAAAAJ'>Xiangjun Gao</a>,
-                        <a href='https://wbhu.github.io'>Wenbo Hu</a>,
-                        <a href='https://xiaoyu258.github.io/'>Xiaoyu Li</a>,
-                        <a href='https://scholar.google.com/citations?user=AWtV-EQAAAAJ'>Song-Hai Zhang</a>,
-                        <a href='https://scholar.google.com/citations?user=4oXBp9UAAAAJ'>Ying Shan</a>
-                    </h2>
-                    <span style='font-size:18px'>
-                        <a style='font-size:18px' href='https://github.com/'>[Github Repo]</a>
-                        <a style='font-size:18px' href='https://arxiv.org'> [ArXiv] </a>
-                        <a style='font-size:18px' href=''> [Project Page] </a> 
-                    </span>
+                    <div class="is-size-5 publication-authors">
+                        <span class="author-block">
+                            <a href='https://scholar.google.com/citations?user=zHp0rMIAAAAJ'>Tian-Xing Xu</a><sup>1</sup>
+                        </span>
+                        <span class="author-block">
+                            <a href="https://scholar.google.com/citations?user=qgdesEcAAAAJ&hl=en">Xiangjun Gao</a><sup>3</sup>
+                        </span>
+                        <span class="author-block">
+                            <a href="https://wbhu.github.io">Wenbo Hu</a><sup>2 &dagger;</sup>
+                        </span>
+                        <span class="author-block">
+                            <a href="https://xiaoyu258.github.io">Xiaoyu Li</a><sup>2</sup>
+                        </span>
+                        <span class="author-block">
+                            <a href='https://scholar.google.com/citations?user=AWtV-EQAAAAJ'>Song-Hai Zhang</a><sup>1 &dagger;</sup>
+                        </span>
+                        <span class="author-block">
+                            <a href="https://scholar.google.com/citations?user=4oXBp9UAAAAJ&hl=en">Ying Shan</a><sup>2</sup>
+                        </span>
+                    </div>
+                    <div class="is-size-5 publication-authors">
+                        <span class="author-block"><sup>1</sup>Tsinghua University</span>
+                        <span class="author-block"><sup>2</sup>ARC Lab, Tencent PCG</span>
+                        <span class="author-block"><sup>3</sup>HKUST</span>
+                    </div>
+                    <div class="column has-text-centered">
+                        <div class="publication-links">
+                            <span class="link-block">
+                                <!-- Paper Link. -->
+                                <a href="https://arxiv.org/abs/"
+                                   class="external-link button is-normal is-rounded is-dark">
+                                    <span class="icon">
+                                        <i class="ai ai-arxiv"></i>
+                                    </span>
+                                    <span>ArXiv</span>
+                                </a>
+                                <!-- Code Link. -->
+                                <a href="https://github.com/Tencent/GeometryCrafter"
+                                   class="external-link button is-normal is-rounded is-dark">
+                                    <span class="icon">
+                                        <i class="fab fa-github"></i>
+                                    </span>
+                                    <span>Code</span>
+                                </a>
+                                <!-- HF Link. -->
+                                <a href="https://huggingface.co/spaces/tencent/GeometryCrafter" target="_blank"
+                                   rel="noopener noreferrer" class="external-link button is-normal is-rounded is-dark">
+                                    <span class="icon">
+                                        &#129303;
+                                    </span>
+                                    <span>Demo</span>
+                                </a>
+                                <!-- Model Link. -->
+                                <a href="https://huggingface.co/tencent/GeometryCrafter" target="_blank"
+                                   rel="noopener noreferrer" class="external-link button is-normal is-rounded is-dark">
+                                    <span class="icon">
+                                       <i class="fas fa-dumbbell"></i>
+                                    </span>
+                                    <span>Model</span>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -75,146 +125,251 @@
 
                 <!--Real world-->
                 <div class="twoitem">
-                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
-                        <source src="video/showcase/film1.mp4" type="video/mp4">
-                    </video>
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                            <source src="video/showcase/film10.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-label">Input</div>
+                    </div>
                     
-                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
-                        <source src="video/showcase/film1_output.mp4" type="video/mp4">
-                    </video>
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/showcase/film10_output.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-label">Point Map</div>
+                    </div>
                 </div>
                 <div class="twoitem">
-                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
-                        <source src="video/showcase/film6.mp4" type="video/mp4">
-                    </video>
-                    
-                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
-                        <source src="video/showcase/film6_output.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="twoitem">
-                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
-                        <source src="video/showcase/film7.mp4" type="video/mp4">
-                    </video>
-                    
-                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
-                        <source src="video/showcase/film7_output.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="twoitem">
-                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
-                        <source src="video/showcase/film10.mp4" type="video/mp4">
-                    </video>
-                    
-                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
-                        <source src="video/showcase/film11_output.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="twoitem">
-                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
                         <source src="video/showcase/film12.mp4" type="video/mp4">
-                    </video>
+                        </video>
+                        <div class="video-label">Input</div>
+                    </div>
                     
-                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
                         <source src="video/showcase/film12_output.mp4" type="video/mp4">
-                    </video>
+                        </video>
+                        <div class="video-label">Point Map</div>
+                    </div>
                 </div>
                 <div class="twoitem">
-                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
-                        <source src="video/showcase/film14.mp4" type="video/mp4">
-                    </video>
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/showcase/film5.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-label">Input</div>
+                    </div>
                     
-                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/showcase/film5_output.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-label">Point Map</div>
+                    </div>
+                </div>
+                <div class="twoitem">
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/showcase/film6.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-label">Input</div>
+                    </div>
+                    
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/showcase/film6_output.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-label">Point Map</div>
+                    </div>
+                </div>
+                <div class="twoitem">
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/showcase/film7.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-label">Input</div>
+                    </div>
+                    
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/showcase/film7_output.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-label">Point Map</div>
+                    </div>
+                </div>
+                <div class="twoitem">
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/showcase/film11.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-label">Input</div>
+                    </div>
+                    
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/showcase/film11_output.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-label">Point Map</div>
+                    </div>
+                </div>
+                <div class="twoitem">
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                        <source src="video/showcase/film14.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-label">Input</div>
+                    </div>
+                    
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
                         <source src="video/showcase/film14_output.mp4" type="video/mp4">
-                    </video>
+                        </video>
+                        <div class="video-label">Point Map</div>
+                    </div>
                 </div>
                 
 
                 <!--DAVIS-->
                 <div class="twoitem">
-                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
                         <source src="video/showcase/parkour.mp4" type="video/mp4">
-                    </video>
+                        </video>
+                        <div class="video-label">Input</div>
+                    </div>
                     
-                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
                         <source src="video/showcase/parkour_output.mp4" type="video/mp4">
-                    </video>
+                        </video>
+                        <div class="video-label">Point Map</div>
+                    </div>
                 </div>
                 <div class="twoitem">
-                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
                         <source src="video/showcase/motocross-bumps.mp4" type="video/mp4">
-                    </video>
+                        </video>
+                        <div class="video-label">Input</div>
+                    </div>
                     
-                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
                         <source src="video/showcase/motocross-bumps_output.mp4" type="video/mp4">
-                    </video>
+                        </video>
+                        <div class="video-label">Point Map</div>
+                    </div>
                 </div>
                 <div class="twoitem">
-                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
                         <source src="video/showcase/drift-turn.mp4" type="video/mp4">
-                    </video>
+                        </video>
+                        <div class="video-label">Input</div>
+                    </div>
                     
-                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
                         <source src="video/showcase/drift-turn_output.mp4" type="video/mp4">
-                    </video>
+                        </video>
+                        <div class="video-label">Point Map</div>
+                    </div>
                 </div>
 
                 
                 <!--animation-->
                 <div class="twoitem">
-                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
                         <source src="video/showcase/sample_10.mp4" type="video/mp4">
-                    </video>
+                        </video>
+                        <div class="video-label">Input</div>
+                    </div>
                     
-                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
                         <source src="video/showcase/sample_10_output.mp4" type="video/mp4">
-                    </video>
+                        </video>
+                        <div class="video-label">Point Map</div>
+                    </div>
                 </div>
                 <div class="twoitem">
-                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
                         <source src="video/showcase/sample_11.mp4" type="video/mp4">
-                    </video>
+                        </video>
+                        <div class="video-label">Input</div>
+                    </div>
                     
-                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
                         <source src="video/showcase/sample_11_output.mp4" type="video/mp4">
-                    </video>
+                        </video>
+                        <div class="video-label">Point Map</div>
+                    </div>
                 </div>
                 <div class="twoitem">
-                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
                         <source src="video/showcase/sample_12.mp4" type="video/mp4">
-                    </video>
+                        </video>
+                        <div class="video-label">Input</div>
+                    </div>
                     
-                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
                         <source src="video/showcase/sample_12_output.mp4" type="video/mp4">
-                    </video>
+                        </video>
+                        <div class="video-label">Point Map</div>
+                    </div>
                 </div>
                 <!--sora generated-->
                 <div class="twoitem">
-                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
                         <source src="video/showcase/sample_22.mp4" type="video/mp4">
-                    </video>
+                        </video>
+                        <div class="video-label">Input</div>
+                    </div>
                     
-                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
                         <source src="video/showcase/sample_22_output.mp4" type="video/mp4">
-                    </video>
+                        </video>
+                        <div class="video-label">Point Map</div>
+                    </div>
                 </div>
                 <div class="twoitem">
-                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
                         <source src="video/showcase/sample_23.mp4" type="video/mp4">
-                    </video>
+                        </video>
+                        <div class="video-label">Input</div>
+                    </div>
                     
-                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
                         <source src="video/showcase/sample_23_output.mp4" type="video/mp4">
-                    </video>
+                        </video>
+                        <div class="video-label">Point Map</div>
+                    </div>
                 </div>
                 <div class="twoitem">
-                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
                         <source src="video/showcase/sample_24.mp4" type="video/mp4">
-                    </video>
+                        </video>
+                        <div class="video-label">Input</div>
+                    </div>
                     
-                    <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                    <div class="video-with-label">
+                        <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
                         <source src="video/showcase/sample_24_output.mp4" type="video/mp4">
-                    </video>
+                        </video>
+                        <div class="video-label">Point Map</div>
+                    </div>
                 </div>
             </div>
 
