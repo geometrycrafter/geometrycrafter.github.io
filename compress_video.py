@@ -25,6 +25,6 @@ def main(src, tgt):
 if __name__ == "__main__": 
     datadir =  'video/showcase'
     files = os.listdir(datadir)
-    files = filter(lambda f: f.startswith('film') and f.endswith('output.mp4'), files)
+    files = filter(lambda f: f.startswith('film16') and f.endswith('output.mp4'), files)
     for f in files:
         main(os.path.join(datadir, f), os.path.join(datadir, f))
