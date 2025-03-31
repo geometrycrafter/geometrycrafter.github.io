@@ -43,7 +43,7 @@
         <div class="container is-max-desktop has-text-centered">
             <div class="columns is-centered">
                 <div class="column has-text-centered ">
-                    <img src="img/logo.png" style="height:150px; margin-bottom: -10px;"></img>
+                    <img src="img/logo.png" style="height:200px; margin-bottom: -10px;"></img>
                     <h1 class="title is-1 publication-title has-text-centered">
                         GeometryCrafter: Consistent Geometry Estimation for Open-world Videos with Diffusion Priors
                     </h1>
@@ -84,7 +84,7 @@
                                     <span>ArXiv</span>
                                 </a>
                                 <!-- Code Link. -->
-                                <a href="https://github.com/Tencent/GeometryCrafter"
+                                <a href="https://github.com/TencentARC/GeometryCrafter"
                                    class="external-link button is-normal is-rounded is-dark">
                                     <span class="icon">
                                         <i class="fab fa-github"></i>
@@ -92,7 +92,7 @@
                                     <span>Code</span>
                                 </a>
                                 <!-- HF Link. -->
-                                <a href="https://huggingface.co/spaces/tencent/GeometryCrafter" target="_blank"
+                                <a href="https://huggingface.co/spaces/TencentARC/GeometryCrafter" target="_blank"
                                    rel="noopener noreferrer" class="external-link button is-normal is-rounded is-dark">
                                     <span class="icon">
                                         &#129303;
@@ -100,7 +100,7 @@
                                     <span>Demo</span>
                                 </a>
                                 <!-- Model Link. -->
-                                <a href="https://huggingface.co/tencent/GeometryCrafter" target="_blank"
+                                <a href="https://huggingface.co/TencentARC/GeometryCrafter" target="_blank"
                                    rel="noopener noreferrer" class="external-link button is-normal is-rounded is-dark">
                                     <span class="icon">
                                        <i class="fas fa-dumbbell"></i>
@@ -434,6 +434,47 @@
     });
 </script>
 
+
+<br><br>
+
+<section class="hero teaser">
+    <div class="hero-body">
+        <!-- Method. -->
+        <div class="columns is-centered has-text-centered">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-three-fifths" style=" margin-top: 30px; margin-bottom: 20px;">
+                    <h2 class="title is-3">Introduction</h2>
+                    <div class="content has-text-justified">
+
+                        <b>Abstract.</b>
+                            Despite remarkable advancements in video depth estimation, existing methods exhibit inherent limitations in achieving geometric fidelity through the affine-invariant predictions, limiting their applicability in reconstruction and other metrically grounded downstream tasks.
+                            We propose GeometryCrafter, a novel framework that recovers high-fidelity point map sequences with temporal coherence from open-world videos, enabling accurate 3D/4D reconstruction, camera parameter estimation, and other depth-based applications. 
+                            At the core of our approach lies a point map Variational Autoencoder (VAE) that learns a latent space agnostic to video latent distributions for effective point map encoding and decoding. 
+                            Leveraging the VAE, we train a video diffusion model to model the distribution of point map sequences conditioned on the input videos.
+                            Extensive evaluations on diverse datasets demonstrate that GeometryCrafter achieves state-of-the-art 3D accuracy, temporal consistency, and generalization capability.
+                        <div class="hero-body" style="margin-top: 40px; margin-bottom: -30px;">
+                            <img id="overview" width="100%" src="./img/vae.png"/>
+                        </div>
+                        <b>Point map VAE.</b>
+                            The point map VAE encodes and decodes point maps with unbounded values, alleviating the inaccurate prediction in distant regions. 
+                            We adopt a dual-encoder design: the native encoder E_SVD inherited from SVD captures normalized disparity maps, while a residual encoder E_eps embeds remaining information as an offset.
+                            It preserves the original latent space by regulating the latents via the original decoder D_SVD, enabling the utilization of pretrained diffusion priors.
+                            A point map decoder D_pmap recovers the final point maps from the latent codes.
+
+                        <div class="hero-body" style="margin-top: 40px; margin-bottom: -30px;">
+                            <img id="inference" width="50%" src="./img/unet.png"/>
+                        </div>
+                        <b>Per-Frame geometry prior diffusion UNet.</b>
+                            We jointly condition the diffusion model on video latents and per-frame geometry priors from an image MGE model M_img.
+                            The geometry is encoded into latent space via our point map VAE, while the video latents are obtained from the native VAE.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!--/ Method. -->
+    </div>
+</section>
 
 <section class="hero teaser is-light is-small">
     <div class="hero-body">
