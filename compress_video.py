@@ -18,13 +18,13 @@ def main(src, tgt):
         tgt,
         np.stack(out_frames),
         fps=video.get_avg_fps(),
-        # macro_block_size=1
+        # macro_block_size=1,
     )
 
 
 if __name__ == "__main__": 
     datadir =  'video/showcase'
     files = os.listdir(datadir)
-    files = filter(lambda f: f.startswith('film16') and f.endswith('output.mp4'), files)
+    files = filter(lambda f: f.startswith('film17') and f.endswith('output.mkv'), files)
     for f in files:
-        main(os.path.join(datadir, f), os.path.join(datadir, f))
+        main(os.path.join(datadir, f), os.path.join(datadir, f.replace('.mkv', '.mp4')))
